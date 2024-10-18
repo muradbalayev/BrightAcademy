@@ -56,6 +56,7 @@ export default function Instructors() {
         damping: 15,
       },
     },
+    viewport: { once: true },
   };
 
   return (
@@ -76,7 +77,7 @@ export default function Instructors() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }} // Trigger animation when scrolled into view
+        viewport={{ once: true, amount: 0.3 }} // Trigger animation when scrolled into view
       >
         {instructors.map((instructor, index) => (
           <motion.div

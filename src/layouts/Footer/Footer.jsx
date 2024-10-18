@@ -66,7 +66,7 @@ const Footer = () => {
           variants={containerVariants}
         >
           {/* Akademiya Links */}
-          <motion.div className="text-center md:text-left" variants={itemVariants}>
+          <motion.div className="text-left" variants={itemVariants}>
             <h3 className="text-lg font-semibold text-black dark:text-white mb-2">Akademiya</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Təqaüd proqramları</a></li>
@@ -77,7 +77,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Tədris Sahələri Links */}
-          <motion.div className="text-center md:text-left" variants={itemVariants}>
+          <motion.div className="text-left" variants={itemVariants}>
             <h3 className="text-lg font-semibold text-black dark:text-white mb-2">Tədris sahələri</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Proqramlaşdırma</a></li>
@@ -88,7 +88,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Korporativ Links */}
-          <motion.div className="text-center md:text-left" variants={itemVariants}>
+          <motion.div className="text-left" variants={itemVariants}>
             <h3 className="text-lg font-semibold text-black dark:text-white mb-2">Korporativ</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Tədbirlər</a></li>
@@ -99,7 +99,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Digər Links */}
-          <motion.div className="text-center md:text-left" variants={itemVariants}>
+          <motion.div className="text-left" variants={itemVariants}>
             <h3 className="text-lg font-semibold text-black dark:text-white mb-2">Digər</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Akademiya</a></li>
