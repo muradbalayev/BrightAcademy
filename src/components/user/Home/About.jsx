@@ -25,7 +25,7 @@ export default function About() {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id='about' className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
           className="flex flex-col md:flex-row items-center justify-between"

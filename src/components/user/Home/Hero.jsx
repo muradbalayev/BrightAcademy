@@ -1,16 +1,26 @@
 import { motion } from 'framer-motion';
-import heroBg from '../../../assets/images/bgimage.png'
-import heroİmg from '../../../assets/images/usermap.png'
+import heroBg from '../../../assets/images/bgimage.png';
+import heroİmg from '../../../assets/images/usermap.png';
 import { ThemeContext } from '@/context/ThemeContext';
 import { useContext } from 'react';
+import { FiChevronDown } from 'react-icons/fi';
 
 export default function HeroSection() {
     const { isDarkTheme } = useContext(ThemeContext);
 
+    // Function to smoothly scroll to the About section
+    const scrollToAbout = () => {
+        const aboutSection = document.getElementById('about'); // Make sure this ID matches the About section
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
 
     return (
-        <section style={{ backgroundImage: !isDarkTheme ? `url(${heroBg})` : 'none' }}
-         className="relative  sm:pt-0 pt-12 bg-gradient-to-b from-blue-100 dark:bg-gray-900 to-white min-h-screen flex items-center justify-center overflow-hidden">
+        <section 
+            style={{ backgroundImage: !isDarkTheme ? `url(${heroBg})` : 'none' }}
+            className="relative sm:pt-0 pt-12 bg-gradient-to-b from-blue-100 dark:bg-gray-900 to-white min-h-screen flex items-center justify-center overflow-hidden"
+        >
             {/* Background shapes */}
             <div className="absolute inset-0 z-0">
                 <motion.div
@@ -93,6 +103,23 @@ export default function HeroSection() {
                         </motion.div>
                     </div>
                 </div>
+            </div>
+
+            {/* Animated Scroll Down Button */}
+            <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+                <motion.div
+                    initial={{ y: 0 }}
+                    animate={{ y: [0, 15, 0] }} // Bouncing effect
+                    transition={{
+                        duration: 1.5,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    onClick={scrollToAbout} // Function to scroll down
+                    className="cursor-pointer"
+                >
+                    <FiChevronDown size={40} className="bg-black text-white dark:bg-white dark:text-black font-bold p-1 rounded-full" />
+                </motion.div>
             </div>
         </section>
     );
