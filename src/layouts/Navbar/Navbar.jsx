@@ -42,7 +42,7 @@ export default function Navbar() {
         <div className="flex md:order-2">
           <button
             onClick={toggleTheme}
-            className='p-3 rounded-full dark:bg-yellow-300 dark:text-gray-900 bg-gray-800 text-yellow-300 hover:scale-110'
+            className='p-3 rounded-full dark:bg-white bg-white dark:text-gray-900 text-gray-900 transition-all hover:scale-110'
             aria-label="Toggle dark mode"
           >
             {isDarkTheme ? <BiSun size={20} /> : <FaMoon size={18} />}

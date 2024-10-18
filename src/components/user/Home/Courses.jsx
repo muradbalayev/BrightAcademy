@@ -1,25 +1,25 @@
 import { motion } from 'framer-motion';
-
+import courseİmg from '../../../assets/images/course.jpg';
 const courses = [
   { 
     title: 'İngilis dili', 
     description: 'IELTS və TOEFL imtahanlarına hazırlıq', 
-    image: 'https://images.pexels.com/photos/1181673/pexels-photo-1181673.jpeg' 
+    image: courseİmg 
   },
   { 
     title: 'Riyaziyyat', 
     description: 'Orta məktəb və universitet səviyyəsi', 
-    image: 'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg' 
+    image: courseİmg
   },
   { 
     title: 'Proqramlaşdırma', 
     description: 'Web və mobil tətbiq inkişafı', 
-    image: 'https://images.pexels.com/photos/1181655/pexels-photo-1181655.jpeg' 
+    image: courseİmg
   },
   { 
     title: 'Biznes idarəçiliyi', 
     description: 'Marketinq və maliyyə əsasları', 
-    image: 'https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg' 
+    image: courseİmg
   },
 ];
 
@@ -52,7 +52,7 @@ export default function Courses() {
   };
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section id='courses' className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12"

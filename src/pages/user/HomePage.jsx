@@ -5,6 +5,8 @@ import About from "../../components/user/Home/About";
 import Courses from "../../components/user/Home/Courses";
 import ScrollSection from "../../components/user/Home/ScrollSection";
 import Instructors from "../../components/user/Home/Instructors";
+import Carousel from "../../components/user/Home/Carousel";
+import Graduates from "../../components/user/Home/Graduates";
 
 
 
@@ -16,8 +18,10 @@ const HomePage = () => {
     <HeroSection />
     <About/>
     <Courses/>
+    <Carousel/>
     <Instructors/>
     <ScrollSection/>
+    <Graduates/>
       {/* <div className='h-screen flex justify-center items-center dark:bg-black'>
         <button className='rounded bg-black dark:bg-white px-4 py-2 text-white dark:text-black'>Button</button>
         <button onClick={toggleTheme}

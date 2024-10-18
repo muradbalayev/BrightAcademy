@@ -8,7 +8,7 @@ const RouterApp = () => {
 
     const { isDarkTheme } = useContext(ThemeContext)
     return (
-        <div className={`${isDarkTheme ? 'dark' : ''} max-w-[1920px] mx-auto overflow-hidden`}>
+        <div className={`${isDarkTheme ? 'dark' : ''} bg-[#f4f6fa] dark:bg-gray-900 max-w-[1920px] mx-auto overflow-hidden`}>
             <BrowserRouter>
                 <Routes>
                     <Route element={<UserLayout />}>

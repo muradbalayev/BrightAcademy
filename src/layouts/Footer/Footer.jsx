@@ -1,6 +1,6 @@
-
-import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedin, FaTiktok, FaYoutube } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { FiPhone, FiMapPin } from 'react-icons/fi';
 
 const Footer = () => {
 
@@ -20,45 +20,37 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="bg-gray-100 dark:bg-gray-900 py-10"
+      className="mx-auto w-full dark:bg-gray-900 bg-[#f4f6fa] pt-10"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }} // trigger animation once when 20% of the element is visible
     >
-      <div className="container mx-auto px-6 lg:px-8">
-        {/* Top Section */}
+      <div className="container bg-white dark:bg-gray-900  rounded-lg shadow-lg  mx-auto py-10 px-6 lg:px-8">
+        {/* Top Section with Contact Details */}
         <motion.div
-          className="flex flex-col lg:flex-row justify-between items-center lg:items-start space-y-6 lg:space-y-0"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left"
           variants={containerVariants}
         >
-          {/* Logo and Description */}
-          <motion.div
-            className="text-center lg:text-left"
-            variants={itemVariants}
-          >
-            <h2 className="text-2xl font-bold text-black dark:text-white mb-2">
-              BrightAcademy
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400">
-              Enhancing your skills and confidence, one course at a time.
-            </p>
+          {/* Phone Section */}
+          <motion.div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" variants={itemVariants}>
+            <FiPhone size={24} className="mx-auto md:mx-0 text-gray-600 dark:text-gray-400 mb-2" />
+            <p className="text-gray-600 dark:text-gray-400">Əlaqə telefon</p>
+            <p className="text-black dark:text-white font-bold">+994 99 123 3254</p>
           </motion.div>
 
-          {/* Navigation Links */}
-          <motion.div
-            className="flex space-x-6 text-gray-600 dark:text-gray-400"
-            variants={itemVariants}
-          >
-            <a href="/about" className="hover:text-black dark:hover:text-white transition-colors">
-              About Us
-            </a>
-            <a href="/courses" className="hover:text-black dark:hover:text-white transition-colors">
-              Courses
-            </a>
-            <a href="/contact" className="hover:text-black dark:hover:text-white transition-colors">
-              Contact
-            </a>
+          {/* WhatsApp Section */}
+          <motion.div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" variants={itemVariants}>
+            <FiPhone size={24} className="mx-auto md:mx-0 text-gray-600 dark:text-gray-400 mb-2" />
+            <p className="text-gray-600 dark:text-gray-400">Mobil/Whatsapp</p>
+            <p className="text-black dark:text-white font-bold">+994 99 999 9999</p>
+          </motion.div>
+
+          {/* Address Section */}
+          <motion.div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg" variants={itemVariants}>
+            <FiMapPin size={24} className="mx-auto md:mx-0 text-gray-600 dark:text-gray-400 mb-2" />
+            <p className="text-gray-600 dark:text-gray-400">Ünvan</p>
+            <p className="text-black dark:text-white font-bold"> Nərimanov prospekti</p>
           </motion.div>
         </motion.div>
 
@@ -68,28 +60,93 @@ const Footer = () => {
           variants={itemVariants}
         />
 
-        {/* Social Media Icons */}
+        {/* Footer Links Section */}
         <motion.div
-          className="flex justify-center space-x-6 text-gray-600 dark:text-gray-400 mb-6"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6"
           variants={containerVariants}
         >
-          <motion.a href="#" className="hover:text-black dark:hover:text-white transition-colors" variants={itemVariants}>
-            <FaFacebookF size={24} />
-          </motion.a>
-          <motion.a href="#" className="hover:text-black dark:hover:text-white transition-colors" variants={itemVariants}>
-            <FaInstagram size={24} />
-          </motion.a>
-          <motion.a href="#" className="hover:text-black dark:hover:text-white transition-colors" variants={itemVariants}>
-            <FaTwitter size={24} />
-          </motion.a>
+          {/* Akademiya Links */}
+          <motion.div className="text-center md:text-left" variants={itemVariants}>
+            <h3 className="text-lg font-semibold text-black dark:text-white mb-2">Akademiya</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Təqaüd proqramları</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Karyera Mərkəzi</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Təhsil modeli</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Akademik partnyorlar</a></li>
+            </ul>
+          </motion.div>
+
+          {/* Tədris Sahələri Links */}
+          <motion.div className="text-center md:text-left" variants={itemVariants}>
+            <h3 className="text-lg font-semibold text-black dark:text-white mb-2">Tədris sahələri</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Proqramlaşdırma</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Dizayn</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Kiber Təhlükəsizlik</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Digital Marketing</a></li>
+            </ul>
+          </motion.div>
+
+          {/* Korporativ Links */}
+          <motion.div className="text-center md:text-left" variants={itemVariants}>
+            <h3 className="text-lg font-semibold text-black dark:text-white mb-2">Korporativ</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Tədbirlər</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Təqaüd proqramları</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Bloq</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Korporativ tədris sahələri</a></li>
+            </ul>
+          </motion.div>
+
+          {/* Digər Links */}
+          <motion.div className="text-center md:text-left" variants={itemVariants}>
+            <h3 className="text-lg font-semibold text-black dark:text-white mb-2">Digər</h3>
+            <ul className="space-y-2">
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Akademiya</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Məzunlarımız</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Akademik partnyorlar</a></li>
+              <li><a href="#" className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white">Əlaqə</a></li>
+            </ul>
+          </motion.div>
         </motion.div>
 
-        {/* Bottom Text */}
-        <motion.div
-          className="text-center text-gray-600 dark:text-gray-400"
+        {/* Divider */}
+        <motion.hr
+          className="my-8 border-gray-300 dark:border-gray-700"
           variants={itemVariants}
+        />
+
+        {/* Bottom Section: Social Media and Copyright */}
+        <motion.div
+          className="flex flex-col lg:flex-row justify-between items-center"
+          variants={containerVariants}
         >
-          © 2024 BrightAcademy. All rights reserved.
+          {/* Social Media Icons */}
+          <motion.div
+            className="flex justify-center lg:justify-start space-x-6 text-gray-600 dark:text-gray-400 mb-6 lg:mb-0"
+            variants={containerVariants}
+          >
+            <motion.a href="#" className="hover:text-black dark:hover:text-white transition-colors" variants={itemVariants}>
+              <FaFacebookF size={24} />
+            </motion.a>
+            <motion.a href="#" className="hover:text-black dark:hover:text-white transition-colors" variants={itemVariants}>
+              <FaInstagram size={24} />
+            </motion.a>
+            <motion.a href="#" className="hover:text-black dark:hover:text-white transition-colors" variants={itemVariants}>
+              <FaLinkedin size={24} />
+            </motion.a>
+            <motion.a href="#" className="hover:text-black dark:hover:text-white transition-colors" variants={itemVariants}>
+              <FaTiktok size={24} />
+            </motion.a>
+            <motion.a href="#" className="hover:text-black dark:hover:text-white transition-colors" variants={itemVariants}>
+              <FaYoutube size={24} />
+            </motion.a>
+          </motion.div>
+
+          {/* Copyright Text */}
+          <motion.p className="text-center text-gray-600 dark:text-gray-400 text-sm mt-4 lg:mt-0" variants={itemVariants}>
+            &copy; 2024 BrightAcademy. Bütün hüquqlar qorunur.
+          </motion.p>
         </motion.div>
       </div>
     </motion.footer>

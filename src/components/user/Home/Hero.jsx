@@ -1,10 +1,16 @@
 import { motion } from 'framer-motion';
-import heroİmg from '../../../assets/images/student.png'
+import heroBg from '../../../assets/images/bgimage.png'
+import heroİmg from '../../../assets/images/usermap.png'
+import { ThemeContext } from '@/context/ThemeContext';
+import { useContext } from 'react';
+
 export default function HeroSection() {
+    const { isDarkTheme } = useContext(ThemeContext);
 
 
     return (
-        <section className="relative sm:pt-0 pt-12 bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen flex items-center justify-center overflow-hidden">
+        <section style={{ backgroundImage: !isDarkTheme ? `url(${heroBg})` : 'none' }}
+         className="relative  sm:pt-0 pt-12 bg-gradient-to-b from-blue-100 dark:bg-gray-900 to-white min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background shapes */}
             <div className="absolute inset-0 z-0">
                 <motion.div
@@ -48,14 +54,14 @@ export default function HeroSection() {
                             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
                         >
                             Bir tədris mərkəzi kimi tələbələrimizin uğurunu öz uğurumuz olaraq dəyərləndiririk.
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
                         >
                             <a
                                 href="#courses"

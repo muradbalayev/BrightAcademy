@@ -1,7 +1,8 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import scrollImg from '../../../assets/images/scrollImage.png';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +11,7 @@ export default function DynamicScrollSection() {
   const imageRef = useRef(null);
   const textRef = useRef(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     const ctx = gsap.context(() => {
       if (sectionRef.current && imageRef.current && textRef.current) {
         const section = sectionRef.current;
@@ -60,10 +61,10 @@ export default function DynamicScrollSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative  dark:bg-gray-900 py-10 flex items-center justify-center overflow-hidden"
+      className="relative dark:bg-gray-900 py-10 hidden items-center justify-center overflow-hidden"
     >
       <div className="relative w-full rounded-xl h-full flex justify-center items-center">
-        <div className="w-[90%] h-full rounded-xl  relative overflow-hidden">
+        <div className="w-full h-full rounded-xl  relative overflow-hidden">
           <img
             ref={imageRef}
             src={scrollImg}
