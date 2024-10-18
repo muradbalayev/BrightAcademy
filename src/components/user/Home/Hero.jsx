@@ -4,7 +4,7 @@ export default function HeroSection() {
 
 
     return (
-        <section className="relative bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen flex items-center justify-center overflow-hidden">
+        <section className="relative sm:pt-0 pt-12 bg-gradient-to-b from-blue-100 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background shapes */}
             <div className="absolute inset-0 z-0">
                 <motion.div
