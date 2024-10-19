@@ -23,7 +23,7 @@ export default function HeroSection() {
             backgroundRepeat: 'no-repeat', // Prevent background image from repeating
             backgroundSize: 'cover', // Make sure the background covers the section
             backgroundPosition: 'center' // Center the background image
-        }}            className="relative sm:pt-0 pt-12 bg-gradient-to-b from-blue-100 dark:bg-gray-900 to-white min-h-[700px] md:min-h-[950px] flex items-center justify-center overflow-hidden"
+        }}            className="relative sm:pt-0 pt-12 bg-gradient-to-b from-blue-100 dark:bg-gray-900 to-white min-h-[800px] md:min-h-[950px] flex items-center justify-center overflow-hidden"
         >
             {/* Background shapes */}
             <div className="absolute inset-0 z-0">

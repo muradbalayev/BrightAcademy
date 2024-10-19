@@ -49,9 +49,9 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="container flex flex-col mt-16 mx-auto py-12"
+            className="container flex flex-col sm:mt-16 mt-10 mx-auto py-12"
         >
-            <Card className="max-w-4xl mx-auto dark:text-white text-black overflow-hidden">
+            <Card className="sm:max-w-4xl w-full mx-auto dark:text-white text-black overflow-hidden">
                 <div className="relative h-[400px]  w-full">
                     <img className='w-full h-full object-cover'
                         src={blogPost.image}

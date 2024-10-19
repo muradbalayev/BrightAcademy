@@ -138,7 +138,7 @@ export default function BlogsPage() {
                 </div>
             </section>
 
-            <div id="blog-posts" className="container mx-auto py-32">
+            <div id="blog-posts" className="container mx-auto py-32 p-2">
                 <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {blogPosts.map((post) => (
                         <motion.div
