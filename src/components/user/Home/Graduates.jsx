@@ -146,11 +146,11 @@ export default function Graduates() {
               </div>
 
               {/* Content */}
-              <div className="sm:p-6 p-4 text-center">
+              <div className="py-3 px-3  text-center">
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
                   {graduate.name}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-2">
+                <p className="text-gray-600 dark:text-gray-300">
                   {graduate.specialty}
                 </p>
               </div>

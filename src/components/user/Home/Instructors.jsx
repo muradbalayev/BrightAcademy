@@ -1,33 +1,37 @@
 import { motion } from 'framer-motion'; // Import motion for animation
 import { Avatar, Typography } from '@mui/material';
-import teacher from '../../../assets/images/teacher.webp';
+import teacher1 from '../../../assets/images/teacher1.webp';
+import teacher2 from '../../../assets/images/teacher2.webp';
+import teacher3 from '../../../assets/images/teacher3.webp';
+import teacher4 from '../../../assets/images/teacher4.webp';
+
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const instructors = [
   { id: 1,
-    name: 'John Doe',
-    title: 'English Instructor',
-    description: 'Expert in IELTS and TOEFL preparation.',
-    image: teacher,
+    name: 'Səbinə Məhərrəmova',
+    title: 'Alman dili təlimçisi',
+    // description: 'Expert in IELTS and TOEFL preparation.',
+    image: teacher1,
   },
   { id: 2,
-    name: 'Jane Smith',
-    title: 'Math Instructor',
-    description: 'Specializes in high school and university-level mathematics.',
-    image: teacher,
+    name: 'Elvira Ocaxquliyeva',
+    title: 'Rus dili təlimçisi',
+    // description: 'Specializes in high school and university-level mathematics.',
+    image: teacher2,
   },
   { id: 3,
-    name: 'Alice Johnson',
-    title: 'Programming Instructor',
-    description: 'Experienced in web and mobile application development.',
-    image: teacher,
+    name: 'Fidan Əliyeva',
+    title: 'Alman dili təlimçisi',
+    // description: 'Experienced in web and mobile application development.',
+    image: teacher3,
   },
   { id: 4,
-    name: 'Michael Brown',
-    title: 'Business Management Instructor',
-    description: 'Teaches marketing and finance fundamentals.',
-    image: teacher,
+    name: 'Səbinə Hümbətova',
+    title: 'İngilis dili təlimçisi',
+    // description: 'Teaches marketing and finance fundamentals.',
+    image: teacher4,
   },
 ];
 
@@ -69,7 +73,7 @@ export default function Instructors() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        Müəllimlərimiz 2
+        Müəllim Heyətimiz
       </motion.h2>
 
 
@@ -97,10 +101,10 @@ export default function Instructors() {
             <Typography variant="subtitle1" color="text.secondary" className="dark:text-gray-300">
               {instructor.title}
             </Typography>
-            <Typography variant="body2" sx={{ mt: 1, mb: 3, textAlign: 'center' }} className="text-gray-600 dark:text-gray-300">
+            {/* <Typography variant="body2" sx={{ mt: 1, mb: 3, textAlign: 'center' }} className="text-gray-600 dark:text-gray-300">
               {instructor.description}
-            </Typography>
-            <Link to={`/instructor/${instructor.id}`}>
+            </Typography> */}
+            <Link className='mt-3' to={`/instructor/${instructor.id}`}>
             <Button className="mt-auto">
               Daha çox
             </Button>

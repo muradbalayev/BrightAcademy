@@ -5,7 +5,7 @@ import About from "../../components/user/Home/About";
 import Courses from "../../components/user/Home/Courses";
 import ScrollSection from "../../components/user/Home/ScrollSection";
 import Instructors from "../../components/user/Home/Instructors";
-import Carousel from "../../components/user/Home/Carousel";
+// import Carousel from "../../components/user/Home/Carousel";
 import Graduates from "../../components/user/Home/Graduates";
 import { useEffect } from "react";
 
@@ -21,7 +21,7 @@ const HomePage = () => {
     <HeroSection />
     <About/>
     <Courses/>
-    <Carousel/>
+    {/* <Carousel/> */}
     <Instructors/>
     <ScrollSection/>
     <Graduates/>

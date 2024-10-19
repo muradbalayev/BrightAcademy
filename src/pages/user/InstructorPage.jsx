@@ -2,77 +2,80 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useParams } from 'react-router-dom';
 import { Avatar, Typography } from '@mui/material';
-import teacher from '../../assets/images/teacher.webp';
+import teacher1 from '../../assets/images/teacher1.webp';
+import teacher2 from '../../assets/images/teacher2.webp';
+import teacher3 from '../../assets/images/teacher3.webp';
+import teacher4 from '../../assets/images/teacher4.webp';
 
 const instructors = [
   {
     id: 1,
-    name: 'John Doe',
-    title: 'İngilis Dili Müəllimi',
-    description: 'IELTS və TOEFL hazırlığı üzrə mütəxəssis.',
-    image: teacher,
-    fullBio: 'John Doe 10 ildən çox təcrübəyə malik peşəkar İngilis dili müəllimidir. O, IELTS və TOEFL imtahanlarına hazırlıq üzrə ixtisaslaşıb və yüzlərlə tələbəyə hədəf ballarını əldə etməkdə kömək edib. John-un dərsləri interaktiv və əyləncəlidir, tələbələrin dil bacarıqlarını praktiki şəkildə inkişaf etdirməsinə kömək edir.',
-    education: 'Bakı Dövlət Universiteti, İngilis dili və Ədəbiyyatı üzrə bakalavr',
-    certifications: ['CELTA', 'DELTA', 'IELTS Trainer Sertifikatı'],
-    teachingPhilosophy: 'Hər bir tələbənin unikal öyrənmə üslubuna malik olduğuna inanıram. Mənim yanaşmam fərdi ehtiyaclara uyğunlaşdırılmış və real dünya tətbiqinə yönəlmiş təhsil verməkdir.',
-    courses: ['IELTS Hazırlığı', 'Akademik İngilis Dili', 'İş İngilis Dili'],
-    achievements: ['2022-ci ildə "İlin Ən Yaxşı Dil Müəllimi" mükafatı', '100-dən çox tələbəni IELTS-də 7+ bal almağa hazırlayıb'],
+    name: 'Səbinə Məhərrəmova',
+    title: 'Alman dili təlimçisi',
+    description: 'Goethe sertifikatı və TestDaF hazırlığı üzrə mütəxəssis.',
+    image: teacher1,
+    fullBio: 'Mən, Səbinə Məhərrəmova Elman qızı 2002-ci ildə Moskva şəhərində anadan olmuşam. 2009-cu ildə Bakı şəhəri, 192 saylı tam orta məktəbə daxil olmuşam və 2020-ci ildə həmin məktəbi bitirmişəm. 2020-ci ildə Azərbaycan Dillər Universitetinin Alman dili fakultəsinə daxil olmuşam və 2024-cü ildə universiteti bitirmişəm. Universitetdə təhsil aldığım müddətdə Alman dili üzrə müəllimə kimi çalışmışam. Bəzi kurslarda isə müəyyən səviyyələr üzrə dərslər keçmişəm. Hal-hazırda isə “ Bright Academy” kursunda Alman dili müəlliməsi kimi çalışıram. Həmçinin onlayn dərslər keçirəm.',
+    education: 'Azərbaycan Dillər Universiteti, Alman Dili və Ədəbiyyatı üzrə bakalavr',
+    certifications: ['Goethe Sertifikatı', 'TestDaF Hazırlığı Təlimçisi', 'Alman Dili Müəllimliyi Sertifikatı'],
+    teachingPhilosophy: 'Hər bir tələbənin öyrənmə tərzinin fərqli olduğuna inanıram. Mənim tədris yanaşmam tələbələrin fərdi ehtiyaclarına uyğunlaşdırılmış, tətbiqi və interaktiv təlim metodlarına əsaslanır.',
+    courses: ['Goethe Hazırlığı', 'TestDaF Hazırlığı', 'Alman Dili (Başlanğıc Səviyyə)', 'İş Alman Dili'],
+    achievements: [ 'Tələbələri TestDaF imtahanında yüksək bal toplayıb'],
     contactInfo: {
-      email: 'john.doe@brightacademy.az',
+      email: 'sabina.meharremova@brightacademy.az',
       phone: '+994 50 123 45 67'
     }
   },
   {
     id: 2,
-    name: 'Jane Smith',
-    title: 'Riyaziyyat Müəllimi',
-    description: 'Orta məktəb və universitet səviyyəli riyaziyyat üzrə ixtisaslaşıb.',
-    image: teacher,
-    fullBio: 'Jane Smith 15 illik təcrübəyə malik riyaziyyat müəllimidir. O, mürəkkəb riyazi konsepsiyaları sadə və anlaşılan şəkildə izah etmək qabiliyyəti ilə tanınır. Jane-in tələbələri davamlı olaraq yüksək nəticələr göstərir və riyaziyyat olimpiadalarında uğurlar qazanırlar.',
-    education: 'Azərbaycan Dövlət Pedaqoji Universiteti, Riyaziyyat üzrə magistr',
-    certifications: ['Yüksək Səviyyəli Riyaziyyat Tədrisi Sertifikatı', 'Olimpiada Hazırlığı Təlimçisi'],
-    teachingPhilosophy: 'Riyaziyyatı real həyat problemləri ilə əlaqələndirərək öyrətməyə çalışıram. Mənim məqsədim tələbələrə təkcə düsturları deyil, analitik düşünmə bacarıqlarını da aşılamaqdır.',
-    courses: ['Orta Məktəb Riyaziyyatı', 'Olimpiada Hazırlığı', 'Ali Riyaziyyat'],
-    achievements: ['Tələbələri Beynəlxalq Riyaziyyat Olimpiadasında 3 qızıl medal qazanıb', '2021-ci ildə "Ən İnnovativ Riyaziyyat Tədrisi" mükafatı'],
+    name: 'Elvira Ocaxquliyeva',
+    title: 'Rus dili təlimçisi',
+    description: 'Orta məktəb və universitet səviyyəsində Rus dili üzrə ixtisaslaşıb.',
+    image: teacher2,
+    fullBio: 'Elvira Ocaxquliyeva, 18 mart 2002-ci il doğulmuşdur. Pedaqoji universiteti bitirərək rus dili müəllimi ixtisasını əldə etmişdir. Hazırda magistratura təhsilini davam etdirərək peşə biliklərini daha da artırır. Dörd ildən artıqdır ki, rus dili müəllimi kimi fəaliyyət göstərir və tələbələrinə dil öyrətməkdə müasir metodlardan istifadə edir. Elvira, tələbələrin rus dilini sürətlə mənimsəmələrini təmin etmək üçün xüsusi yanaşmalar tətbiq edir və onlarla səmimi əlaqələr qurmağa çalışır. Dil öyrətmək ona yalnız peşə deyil, həm də bir sevgi olaraq görünür.',
+    education: 'Azərbaycan Dillər Universiteti, Rus Dili və Ədəbiyyatı üzrə bakalavr',
+    certifications: ['Rus Dili Müəllimliyi Sertifikatı', 'İELTS Hazırlığı Sertifikatı'],
+    teachingPhilosophy: 'Dilin əsas məqsədi ünsiyyətdir və mən dərslərimdə tələbələrə praktiki danışıq bacarıqlarını artırmağı öyrətməyə çalışıram. Mənim məqsədim tələbələrimə dilə sevgi aşılamaq və onları inamlı danışanlara çevirməkdir.',
+    courses: ['Rus Dili (Başlanğıc)', 'Rus Dili (Orta)', 'Rus Dili (Əla Səviyyə)', 'İELTS Hazırlığı (Rus dili)'],
+    achievements: [ 'Tələbələri Rus Dili üzrə beynəlxalq sertifikat imtahanlarında yüksək bal toplayıb'],
     contactInfo: {
-      email: 'jane.smith@brightacademy.az',
-      phone: '+994 50 987 65 43'
+      email: 'elvira.ocaxquliyeva@brightacademy.az',
+      phone: '+994 50 123 45 67'
     }
   },
   {
     id: 3,
-    name: 'Alice Johnson',
-    title: 'Proqramlaşdırma Müəllimi',
-    description: 'Web və mobil tətbiq inkişafı üzrə təcrübəli mütəxəssis.',
-    image: teacher,
-    fullBio: 'Alice Johnson 8 illik sənaye təcrübəsinə malik peşəkar proqramçı və müəllimdir. O, bir çox uğurlu startapların texniki həmtəsisçisi olub və indi öz bilik və təcrübəsini gələcək proqramçılara ötürür. Alice-in dərsləri praktiki layihələrə əsaslanır və tələbələrə real dünya problemlərini həll etmək üçün kod yazmağı öyrədir.',
-    education: 'MIT, Kompüter Elmləri üzrə magistr',
-    certifications: ['AWS Certified Developer', 'Google Certified Professional Cloud Developer', 'Microsoft Certified: Azure Developer Associate'],
-    teachingPhilosophy: 'İnanıram ki, ən yaxşı öyrənmə metodu praktikadır. Dərslərimdə tələbələr nəzəriyyəni öyrənməklə yanaşı, real layihələr üzərində işləyirlər. Bu, onların nəzəri bilikləri praktikada tətbiq etmələrinə və portfolio yaratmalarına imkan verir.',
-    courses: ['Full Stack Web Development', 'Mobile App Development with React Native', 'Data Structures and Algorithms'],
-    achievements: ['500-dən çox tələbəni texnologiya şirkətlərində işə düzəldib', '2023-cü ildə "Ən Yaxşı Coding Bootcamp Təlimçisi" seçilib'],
+    name: 'Fidan Əliyeva',
+    title: 'Alman dili təlimçisi',
+    description: 'Goethe sertifikatı və TestDaF hazırlığı üzrə mütəxəssis.',
+    image: teacher3,
+    fullBio: 'Fidan Əliyeva Tahir qızı 1995ci il avqustun 21də Baklda anadan olmuşdur. 2001-2012ci illərdə Bakı şəhəri, Yasamal rayonu 13 nömrəli məktəbə getmişdir. 20012-2016cı illərdə Bakı Slavyan Univetsitetinin Filologiya fakültəsi, Alman dili üzrə Dil və Ədəbiyyat müəllimliyi ixtisasını oxumuşdur. 2018-ci ildə 1 il Freiburg akademy-də alman dilini tədris etmişdir. Daha sonra fərdi şəkildə çalışmışdır. 2023-cü ilin fevral ayından bugünə kimi Bright akademy-də alman dilinin tədrisi ilə məşğuldur.',
+    education: 'Azərbaycan Dillər Universiteti, Alman Dili və Ədəbiyyatı üzrə bakalavr',
+    certifications: ['Goethe Sertifikatı', 'TestDaF Hazırlığı Təlimçisi', 'Alman Dili Müəllimliyi Sertifikatı'],
+    teachingPhilosophy: 'Hər bir tələbənin öyrənmə tərzinin fərqli olduğuna inanıram. Mənim tədris yanaşmam tələbələrin fərdi ehtiyaclarına uyğunlaşdırılmış, tətbiqi və interaktiv təlim metodlarına əsaslanır.',
+    courses: ['Goethe Hazırlığı', 'TestDaF Hazırlığı', 'Alman Dili (Başlanğıc Səviyyə)', 'İş Alman Dili'],
+    achievements: [ 'Tələbələri TestDaF imtahanında yüksək bal toplayıb'],
     contactInfo: {
-      email: 'alice.johnson@brightacademy.az',
-      phone: '+994 50 765 43 21'
+      email: 'fidan.aliyeva@brightacademy.az',
+      phone: '+994 50 123 45 67'
     }
   },
   {
     id: 4,
-    name: 'Michael Brown',
-    title: 'Biznes İdarəetmə Müəllimi',
-    description: 'Marketinq və maliyyə əsaslarını tədris edir.',
-    image: teacher,
-    fullBio: 'Michael Brown 20 illik biznes təcrübəsinə malik peşəkar menecerdir. O, bir neçə uğurlu şirkətin qurucusu və CEO-su olub. İndi isə öz təcrübəsini gələcək biznes liderləri ilə bölüşür. Michael-ın dərsləri real biznes case study-lərinə əsaslanır və tələbələrə praktiki biznes bacarıqları qazandırır.',
-    education: 'Harvard Business School, MBA',
-    certifications: ['Project Management Professional (PMP)', 'Certified Management Accountant (CMA)'],
-    teachingPhilosophy: 'Biznes təhsilinin real təcrübə ilə birləşdirilməsinin vacibliyinə inanıram. Dərslərimdə tələbələr nəzəri bilikləri real biznes ssenarilərində tətbiq edirlər. Bu, onların analitik düşünmə və qərar qəbul etmə bacarıqlarını inkişaf etdirir.',
-    courses: ['Strateji Menecment', 'Maliyyə İdarəetməsi', 'Marketinq Strategiyaları'],
-    achievements: ['Fortune 500 şirkətlərində 100-dən çox top menecerə məsləhət verib', '2020-ci ildə "İlin Biznes Məsləhətçisi" seçilib'],
+    name: 'Səbinə Hümbətova',
+    title: 'İngilis dili təlimçisi',
+    description: 'Akademik və biznes məqsədləri üçün ingilis dili tədrisində ixtisaslaşır.',
+    image: teacher4,
+    fullBio: 'Azərbaycan Dillər Universitetinin bakalavr məzunu, Xarici-dilin tədrisi metodikası və metodologiyası üzrə magistr dərəcəsi almış,TESOL və TEFL (Digər dillərdə danışanlara ingilis-dilinin öyrədilməsi və ingilis-dilinin xarici dil kimi öyrədilməsi) sertifikatılı müəllimimiz Səbinə Hümbətova 3 illik iş təcrübəsinə sahibdir.',
+    education: 'Bakı Dövlət Universiteti, İngilis dili və Ədəbiyyatı üzrə bakalavr',
+    certifications: ['TESOL (Xarici Dillər üzrə İngilis Dili Tədrisi)', 'Cambridge English Level 5 Sertifikatı'],
+    teachingPhilosophy: 'Mən hər bir tələbənin fərqli öyrənmə üslubu olduğuna inanıram. Dərslərimi tələbələrin ehtiyaclarına uyğunlaşdırmağa və onların ingilis dilini real həyatda istifadə etmələrinə imkan yaradan bir mühit yaratmağa çalışıram.',
+    courses: ['Biznes İngilis Dili', 'IELTS Hazırlığı', 'Akademik İngilis Dili'],
+    achievements: ['100-dən çox tələbəni IELTS imtahanında 7+ bal əldə etməyə hazırlayıb', '2021-ci ildə BrightAcademy tərəfindən "Ən Yaxşı İngilis Dili Müəllimi" mükafatına layiq görülüb'],
     contactInfo: {
-      email: 'michael.brown@brightacademy.az',
+      email: 'sabina.humbatova@brightacademy.az',
       phone: '+994 50 321 54 76'
     }
-  },
+  }
 ];
 
 export default function InstructorPage() {
