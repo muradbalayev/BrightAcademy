@@ -83,7 +83,7 @@ export default function Courses() {
   };
 
   return (
-    <section id='courses' className="py-20 bg-white dark:bg-gray-900">
+    <section id='courses' className="py-20 ">
       <div className="container mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12"
@@ -107,7 +107,6 @@ export default function Courses() {
               key={index}
               className="relative group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500"
               variants={itemVariants}
-              whileHover={{ scale: 1.03 }}
             >
               {/* Image */}
               <motion.img

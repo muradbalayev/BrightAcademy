@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <motion.footer
-      className="mx-auto w-full dark:bg-gray-900 bg-[#f4f6fa] pt-10"
+      className="mx-auto w-full  pt-10"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"

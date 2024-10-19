@@ -109,7 +109,7 @@ export default function Graduates() {
   };
 
   return (
-    <section id='graduates' className="py-20 bg-gray-100 dark:bg-gray-900">
+    <section id='graduates' className="py-20 ">
       <div className="container flex flex-col mx-auto px-4">
         <motion.h2
           className="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12"

@@ -45,7 +45,7 @@ const instructors = [
 
 const CarouselDemo = () => {
     return (
-        <div className="md:py-20 sm:py-12 py-8 bg-gray-100 dark:bg-gray-900">
+        <div className="md:py-20 sm:py-12 py-8 ">
             <motion.h2
                 className="text-4xl font-bold text-center  text-gray-800 dark:text-white mb-12"
                 initial={{ opacity: 0, y: 50 }}

@@ -61,7 +61,7 @@ export default function Instructors() {
   };
 
   return (
-    <section className="py-20 bg-gray-100 dark:bg-gray-900">
+    <section className="py-20 ">
       <motion.h2
         className="text-4xl font-bold text-center  text-gray-800 dark:text-white mb-12"
         initial={{ opacity: 0, y: 50 }}

@@ -3,6 +3,9 @@ import { ThemeContext } from "../../context/ThemeContext";
 import {  FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { BiSun } from "react-icons/bi";
+// import "@theme-toggles/react/css/InnerMoon.css"
+// import { InnerMoon } from "@theme-toggles/react"
+
 
 export default function Navbar() {
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
@@ -43,10 +46,11 @@ const isHomePage = location.pathname === '/';
         <div className="flex md:order-2">
           <button
             onClick={toggleTheme}
-            className='p-3 rounded-full dark:bg-white bg-white dark:text-gray-900 text-gray-900 transition-all hover:scale-110'
+            className='rounded-full transition-all hover:scale-110'
             aria-label="Toggle dark mode"
           >
-            {isDarkTheme ? <BiSun size={20} /> : <FaMoon size={18} />}
+            {isDarkTheme ? <BiSun className="text-gray-900 dark:text-white" size={30} /> : <FaMoon className="text-gray-900 dark:text-white" size={27} />}
+          {/* <InnerMoon className="text-3xl dark:text-white text-gray-900" duration={750} /> */}
           </button>
           <button
             onClick={toggleMenu}
@@ -56,8 +60,10 @@ const isHomePage = location.pathname === '/';
             aria-expanded={isMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
-            {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+            {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20}  />}
           </button>
+          
+
         </div>
         <div
           className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
