@@ -94,7 +94,7 @@ export default function InstructorPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gray-100 mt-10 dark:bg-gray-900 py-12 px-4 sm:px-6 lg:px-8"
+      className="min-h-screen  mt-10  py-12 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-xl overflow-hidden">
         <div className="p-8">

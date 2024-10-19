@@ -26,7 +26,7 @@ const Footer = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }} // trigger animation once when 20% of the element is visible
     >
-      <div className="container bg-white dark:bg-gray-900  rounded-lg shadow-lg  mx-auto py-10 px-6 lg:px-8">
+      <div className="container bg-white dark:bg-transparent rounded-lg shadow-lg  mx-auto py-10 px-6 lg:px-8">
         {/* Top Section with Contact Details */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left"
