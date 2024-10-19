@@ -144,7 +144,7 @@ export default function CoursePage() {
               <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Kurs Detalları</h2>
               <p className="text-gray-600 dark:text-gray-300"><strong>Müddət:</strong> {course.duration}</p>
               <p className="text-gray-600 dark:text-gray-300"><strong>Səviyyə:</strong> {course.level}</p>
-              <p className="text-gray-600 dark:text-gray-300"><strong>MÜəllim:</strong> {course.instructor}</p>
+              <p className="text-gray-600 dark:text-gray-300"><strong>Müəllim:</strong> {course.instructor}</p>
             </div>
             <div>
               <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Qiymət & Vaxt</h2>
