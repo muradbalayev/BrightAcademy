@@ -1,20 +1,17 @@
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
-import {  FaMoon, FaBars, FaTimes } from "react-icons/fa";
+import { FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { BiSun } from "react-icons/bi";
-// import "@theme-toggles/react/css/InnerMoon.css"
-// import { InnerMoon } from "@theme-toggles/react"
-
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +31,16 @@ export default function Navbar() {
     };
   }, [location]);
 
-const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === '/';
 
+  // Animation variants for menu slide-down (mobile only)
+  const menuVariants = {
+    hidden: { height: 0, opacity: 0 },
+    visible: { height: 'auto', opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+  };
 
   return (
-    <nav className={`fixed w-full z-20 top-0 left-0 ${isScrolled || !isHomePage ? 'bg-white dark:bg-gray-900 shadow-md' : 'bg-transparent'} dark:text-white text-gray-800 `}>
+    <nav className={`fixed w-full z-20 top-0 left-0 ${isScrolled || !isHomePage ? 'bg-white dark:bg-gray-900 shadow-md' : 'bg-transparent'} dark:text-white text-gray-800`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center">
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">BrightAcademy</span>
@@ -50,7 +52,6 @@ const isHomePage = location.pathname === '/';
             aria-label="Toggle dark mode"
           >
             {isDarkTheme ? <BiSun className="text-gray-900 dark:text-white" size={30} /> : <FaMoon className="text-gray-900 dark:text-white" size={27} />}
-          {/* <InnerMoon className="text-3xl dark:text-white text-gray-900" duration={750} /> */}
           </button>
           <button
             onClick={toggleMenu}
@@ -60,23 +61,18 @@ const isHomePage = location.pathname === '/';
             aria-expanded={isMenuOpen}
           >
             <span className="sr-only">Open main menu</span>
-            {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20}  />}
+            {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
           </button>
-          
-
         </div>
-        <div
-          className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
-            isMenuOpen ? 'block' : 'hidden'
-          } ${isMenuOpen ? 'animate-slideDown' : ''}`}
-          id="navbar-sticky"
-        >
-          <ul className={`flex flex-col p-4 md:p-0 mt-4 font-medium rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:md:bg-transparent dark:bg-gray-900 md:bg-transparent bg-white   `}>
+
+        {/* Desktop Menu */}
+        <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? '' : 'hidden md:flex'}`}>
+          <ul className="md:flex hidden p-4 md:p-0 mt-4 font-medium rounded-lg flex-row md:space-x-8 md:mt-0 md:border-0 dark:md:bg-transparent dark:bg-gray-900 md:bg-transparent bg-white">
             <li>
               <Link to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</Link>
             </li>
             <li>
-              <Link to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</Link>
+              <Link to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</Link>
             </li>
             <li>
               <Link to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
@@ -84,9 +80,31 @@ const isHomePage = location.pathname === '/';
             <li>
               <Link to="/blogs" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blogs</Link>
             </li>
-          
           </ul>
         </div>
+
+        {/* Mobile Menu Animation */}
+        <motion.div
+          className={`items-center justify-between w-full md:hidden`}
+          initial="hidden"
+          animate={isMenuOpen ? "visible" : "hidden"}
+          variants={menuVariants}
+        >
+          <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg bg-white dark:bg-gray-800">
+            <li>
+              <Link onClick={toggleMenu} to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Home</Link>
+            </li>
+            <li>
+              <Link onClick={toggleMenu} to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">About</Link>
+            </li>
+            <li>
+              <Link onClick={toggleMenu} to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Contact</Link>
+            </li>
+            <li>
+              <Link onClick={toggleMenu} to="/blogs" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Blogs</Link>
+            </li>
+          </ul>
+        </motion.div>
       </div>
     </nav>
   );
