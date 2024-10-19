@@ -36,7 +36,7 @@ export default function Navbar() {
   // Animation variants for menu slide-down (mobile only)
   const menuVariants = {
     hidden: { height: 0, opacity: 0 },
-    visible: { height: 'auto', opacity: 1, transition: { duration: 0.5, ease: 'easeOut' } },
+    visible: { height: 'auto', opacity: 1, transition: { duration: 0.6, ease: 'easeOut' } },
   };
 
   return (
@@ -90,7 +90,7 @@ export default function Navbar() {
           animate={isMenuOpen ? "visible" : "hidden"}
           variants={menuVariants}
         >
-          <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg bg-white dark:bg-gray-800">
+          <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg bg-gray-100 dark:bg-gray-800 ">
             <li>
               <Link onClick={toggleMenu} to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Home</Link>
             </li>
