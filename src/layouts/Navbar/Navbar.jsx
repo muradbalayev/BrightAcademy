@@ -83,28 +83,30 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* Mobile Menu Animation */}
-        <motion.div
-          className={`items-center justify-between w-full md:hidden`}
-          initial="hidden"
-          animate={isMenuOpen ? "visible" : "hidden"}
-          variants={menuVariants}
-        >
-          <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg bg-gray-100 dark:bg-gray-800 ">
-            <li>
-              <Link onClick={toggleMenu} to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Home</Link>
-            </li>
-            <li>
-              <Link onClick={toggleMenu} to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">About</Link>
-            </li>
-            <li>
-              <Link onClick={toggleMenu} to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Contact</Link>
-            </li>
-            <li>
-              <Link onClick={toggleMenu} to="/blogs" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Blogs</Link>
-            </li>
-          </ul>
-        </motion.div>
+        {/* Render Mobile Menu only when isMenuOpen is true */}
+        {isMenuOpen && (
+          <motion.div
+            className={`items-center justify-between w-full md:hidden`}
+            initial="hidden"
+            animate={isMenuOpen ? "visible" : "hidden"}
+            variants={menuVariants}
+          >
+            <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg bg-gray-100 dark:bg-gray-800 ">
+              <li>
+                <Link onClick={toggleMenu} to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Home</Link>
+              </li>
+              <li>
+                <Link onClick={toggleMenu} to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">About</Link>
+              </li>
+              <li>
+                <Link onClick={toggleMenu} to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Contact</Link>
+              </li>
+              <li>
+                <Link onClick={toggleMenu} to="/blogs" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Blogs</Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
       </div>
     </nav>
   );
