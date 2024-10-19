@@ -122,43 +122,43 @@ export default function InstructorPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            <h6 className="text-gray-900 text-xl dark:text-white font-bold mt-2">Haqqında</h6>
+            <h6 className="text-gray-900 sm:text-xl text-lg dark:text-white font-bold mt-2">Haqqında</h6>
             <Typography variant="body1" className="text-gray-600 dark:text-gray-300 mb-4">
               {instructor.fullBio}
             </Typography>
 
-            <h6 className="text-gray-900 text-xl dark:text-white font-semibold mt-2">Təhsil</h6>
+            <h6 className="text-gray-900 sm:text-xl text-lg dark:text-white font-semibold mt-2">Təhsil</h6>
             <Typography variant="body1" className="text-gray-600 dark:text-gray-300 mb-4">
               {instructor.education}
             </Typography>
 
-            <h6 className="text-gray-900 text-xl dark:text-white font-semibold mt-2">Sertifikatlar</h6>
+            <h6 className="text-gray-900 sm:text-xl text-lg dark:text-white font-semibold mt-2">Sertifikatlar</h6>
             <ul className="list-disc pl-5 mb-4">
               {instructor.certifications.map((cert, index) => (
                 <li key={index} className="text-gray-600 dark:text-gray-300">{cert}</li>
               ))}
             </ul>
 
-            <h6 className="text-gray-900 text-xl dark:text-white font-semibold mt-2">Tədris Fəlsəfəsi</h6>
+            <h6 className="text-gray-900 sm:text-xl text-lg dark:text-white font-semibold mt-2">Tədris Fəlsəfəsi</h6>
             <Typography variant="body1" className="text-gray-600 dark:text-gray-300 mb-4">
               {instructor.teachingPhilosophy}
             </Typography>
 
-            <h6 className="text-gray-900 text-xl dark:text-white font-semibold mt-2">Tədris Etdiyi Kurslar</h6>
+            <h6 className="text-gray-900 sm:text-xl text-lg dark:text-white font-semibold mt-2">Tədris Etdiyi Kurslar</h6>
             <ul className="list-disc pl-5 mb-4">
               {instructor.courses.map((course, index) => (
                 <li key={index} className="text-gray-600 dark:text-gray-300">{course}</li>
               ))}
             </ul>
 
-            <h6 className="text-gray-900 text-xl dark:text-white font-semibold mt-2">Nailiyyətlər</h6>
+            <h6 className="text-gray-900 sm:text-xl text-lg dark:text-white font-semibold mt-2">Nailiyyətlər</h6>
             <ul className="list-disc pl-5 mb-4">
               {instructor.achievements.map((achievement, index) => (
                 <li key={index} className="text-gray-600 dark:text-gray-300">{achievement}</li>
               ))}
             </ul>
 
-            <h6 className="text-gray-900 text-xl dark:text-white font-semibold mt-2">Əlaqə Məlumatları</h6>
+            <h6 className="text-gray-900 sm:text-xl text-lg dark:text-white font-semibold mt-2">Əlaqə Məlumatları</h6>
             <Typography variant="body1" className="text-gray-600 dark:text-gray-300">
               Email: {instructor.contactInfo.email}
             </Typography>
