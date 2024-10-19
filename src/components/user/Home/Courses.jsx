@@ -1,29 +1,60 @@
 import { motion } from 'framer-motion';
 import courseİmg from '../../../assets/images/course.jpg';
-const courses = [
-  { 
-    title: 'İngilis dili', 
-    description: 'IELTS və TOEFL imtahanlarına hazırlıq', 
-    image: courseİmg 
-  },
-  { 
-    title: 'Riyaziyyat', 
-    description: 'Orta məktəb və universitet səviyyəsi', 
-    image: courseİmg
-  },
-  { 
-    title: 'Proqramlaşdırma', 
-    description: 'Web və mobil tətbiq inkişafı', 
-    image: courseİmg
-  },
-  { 
-    title: 'Biznes idarəçiliyi', 
-    description: 'Marketinq və maliyyə əsasları', 
-    image: courseİmg
-  },
-];
+import { Link } from 'react-router-dom';
 
 export default function Courses() {
+
+  const courses = [
+    {
+      id: 1,
+      title: 'İngilis Dili',
+      description: 'IELTS və TOEFL imtahanlarına hazırlıq üçün oxuma, yazma, dinləmə və danışıq dərsləri. Testlər və şəxsi rəy ilə əhatələnmişdir.',
+      image: courseİmg,
+      duration: '6 ay',
+      level: 'Orta səviyyədən Yüksək səviyyəyə',
+      instructor: 'John Doe',
+      price: "150",
+      schedule: 'B.e və Çərşənbə, 18:00-20:00',
+      startDate: '2024-12-01',
+    },
+    {
+      id: 2,
+      title: 'Riyaziyyat',
+      description: 'Orta məktəb və universitet səviyyəsi üzrə riyaziyyat, cəbr, hesablama və statistika mövzularını əhatə edir. Rəqabətli imtahanlara hazırlıq və problem həll etmə bacarıqlarını artırmaq üçün ideal.',
+      image: courseİmg,
+      duration: '4 ay',
+      level: 'Bütün Səviyyələr',
+      instructor: 'Jane Smith',
+      price: "150",
+      schedule: 'Çərşənbə axşamı və Cümə axşamı, 17:00-19:00',
+      startDate: '2024-12-01',
+    },
+    {
+      id: 3,
+      title: 'Proqramlaşdırma',
+      description: 'Veb və mobil tətbiqetmə inkişafı üçün HTML, CSS, JavaScript və React üzərində praktiki layihələrlə dolu dərslər.',
+      image: courseİmg,
+      duration: '8 ay',
+      level: 'Başlanğıcdan Yüksək səviyyəyə',
+      instructor: 'Michael Johnson',
+      price: "150",
+      schedule: 'Şənbə, 10:00-13:00',
+      startDate: '2024-12-01',
+    },
+    {
+      id: 4,
+      title: 'Biznes İdarəçiliyi',
+      description: 'Marketinq, maliyyə və əməliyyat idarəçiliyi üzrə təməl biliklər. Sahibkarlar və peşəkar bacarıqlarını artırmaq istəyənlər üçün nəzərdə tutulub.',
+      image: courseİmg,
+      duration: '5 ay',
+      level: 'Başlanğıcdan Orta səviyyəyə',
+      instructor: 'Sarah Williams',
+      price: "150",
+      schedule: 'Cümə, 18:00-21:00',
+      startDate: '2024-12-01',
+    },
+  ];
+
   // Variants for the container
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -65,7 +96,7 @@ export default function Courses() {
         
         {/* Grid Container */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -76,7 +107,7 @@ export default function Courses() {
               key={index}
               className="relative group bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500"
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
             >
               {/* Image */}
               <motion.img
@@ -94,13 +125,23 @@ export default function Courses() {
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {course.description}
                 </p>
+
+                {/* Additional Course Details */}
+                <p className="text-gray-800 dark:text-gray-400"><strong>Müddət:</strong> {course.duration}</p>
+                <p className="text-gray-800 dark:text-gray-400"><strong>Səviyyə:</strong> {course.level}</p>
+                <p className="text-gray-800 dark:text-gray-400"><strong>Qiymət:</strong> {course.price} ₼</p>
+                <p className="text-gray-800 dark:text-gray-400"><strong>Müəllim:</strong> {course.instructor}</p>
+                <p className="text-gray-800 dark:text-gray-400"><strong>Başlama tarixi:</strong> {course.startDate}</p>
+
+                <Link to={`/courses/${course.id}`}>
                 <motion.button
-                  className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300"
+                  className="mt-4 px-6 py-2 bg-black text-white dark:text-black dark:bg-white font-medium rounded-md hover:bg-gray-800 transition-colors duration-300"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Ətraflı
                 </motion.button>
+                  </Link>
               </div>
             </motion.div>
           ))}

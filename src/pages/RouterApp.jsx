@@ -8,6 +8,8 @@ import BlogsPage from './user/BlogsPage'
 import BlogPage from './user/BlogPage'
 import ContactPage from './user/ContactPage'
 import AboutPage from './user/AboutPage'
+import CoursePage from './user/Course/CoursePage'
+import InstructorPage from './user/InstructorPage'
 const RouterApp = () => {
 
     const { isDarkTheme } = useContext(ThemeContext)
@@ -23,6 +25,8 @@ const RouterApp = () => {
                         <Route path='/blogs/react' element={<BlogPage />} />
                         <Route path='/contact' element={<ContactPage />} />
                         <Route path="/about" element={<AboutPage/>} />
+                        <Route path='/courses/:courseId' element={<CoursePage />} />
+                        <Route path='/instructor/:instructorId' element={<InstructorPage />} />
                     </Route>
                     <Route path='/admin' element={<AdminPage />} />
                 </Routes>

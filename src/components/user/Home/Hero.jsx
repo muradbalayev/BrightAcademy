@@ -4,6 +4,7 @@ import heroİmg from '../../../assets/images/usermap.png';
 import { ThemeContext } from '@/context/ThemeContext';
 import { useContext } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
+import { Button } from '@/components/ui/button';
 
 export default function HeroSection() {
     const { isDarkTheme } = useContext(ThemeContext);
@@ -16,14 +17,21 @@ export default function HeroSection() {
         }
     };
 
+    const scrollToCourses = () => {
+        const courseSection = document.getElementById('courses'); // Make sure this ID matches the About section
+        if (courseSection) {
+            courseSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
-        <section 
-        style={{
-            backgroundImage: !isDarkTheme ? `url(${heroBg})` : 'none',
-            backgroundRepeat: 'no-repeat', // Prevent background image from repeating
-            backgroundSize: 'cover', // Make sure the background covers the section
-            backgroundPosition: 'center' // Center the background image
-        }}            className="relative sm:pt-0 pt-12 bg-gradient-to-b from-blue-100 dark:bg-gray-900 to-white min-h-[800px] md:min-h-[950px] flex items-center justify-center overflow-hidden"
+        <section
+            style={{
+                backgroundImage: !isDarkTheme ? `url(${heroBg})` : 'none',
+                backgroundRepeat: 'no-repeat', // Prevent background image from repeating
+                backgroundSize: 'cover', // Make sure the background covers the section
+                backgroundPosition: 'center' // Center the background image
+            }} className="relative sm:pt-0 pt-12 bg-gradient-to-b from-blue-100 dark:bg-gray-900 to-white min-h-[800px] md:min-h-[950px] flex items-center justify-center overflow-hidden"
         >
             {/* Background shapes */}
             <div className="absolute inset-0 z-0">
@@ -77,12 +85,12 @@ export default function HeroSection() {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.5 }}
                         >
-                            <a
-                                href="#courses"
+                            <Button
+                                onClick={scrollToCourses} // Function to scroll down
                                 className="poppins bg-blue-500 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
                             >
                                 Kurslarımızı Kəşf Edin
-                            </a>
+                            </Button>
                         </motion.div>
                     </div>
                     <div className="w-full md:w-1/2">

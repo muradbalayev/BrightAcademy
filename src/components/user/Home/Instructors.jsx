@@ -2,27 +2,28 @@ import { motion } from 'framer-motion'; // Import motion for animation
 import { Avatar, Typography } from '@mui/material';
 import teacher from '../../../assets/images/teacher.webp';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const instructors = [
-  {
+  { id: 1,
     name: 'John Doe',
     title: 'English Instructor',
     description: 'Expert in IELTS and TOEFL preparation.',
     image: teacher,
   },
-  {
+  { id: 2,
     name: 'Jane Smith',
     title: 'Math Instructor',
     description: 'Specializes in high school and university-level mathematics.',
     image: teacher,
   },
-  {
+  { id: 3,
     name: 'Alice Johnson',
     title: 'Programming Instructor',
     description: 'Experienced in web and mobile application development.',
     image: teacher,
   },
-  {
+  { id: 4,
     name: 'Michael Brown',
     title: 'Business Management Instructor',
     description: 'Teaches marketing and finance fundamentals.',
@@ -99,9 +100,11 @@ export default function Instructors() {
             <Typography variant="body2" sx={{ mt: 1, mb: 3, textAlign: 'center' }} className="text-gray-600 dark:text-gray-300">
               {instructor.description}
             </Typography>
+            <Link to={`/instructor/${instructor.id}`}>
             <Button className="mt-auto">
               Daha çox
             </Button>
+            </Link>
           </motion.div>
         ))}
       </motion.div>
