@@ -7,11 +7,14 @@ import ScrollSection from "../../components/user/Home/ScrollSection";
 import Instructors from "../../components/user/Home/Instructors";
 import Carousel from "../../components/user/Home/Carousel";
 import Graduates from "../../components/user/Home/Graduates";
+import { useEffect } from "react";
 
 
 
 const HomePage = () => {
-  // const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
@@ -22,13 +25,6 @@ const HomePage = () => {
     <Instructors/>
     <ScrollSection/>
     <Graduates/>
-      {/* <div className='h-screen flex justify-center items-center dark:bg-black'>
-        <button className='rounded bg-black dark:bg-white px-4 py-2 text-white dark:text-black'>Button</button>
-        <button onClick={toggleTheme}
-          className='rounded bg-teal-300 px-4 py-2 text-gray dark:text-white'>
-          {isDarkTheme ? 'Light Mode' : 'Dark Mode'}
-        </button>
-      </div> */}
     </>
   )
 }

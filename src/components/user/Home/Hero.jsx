@@ -122,7 +122,7 @@ export default function HeroSection() {
                     onClick={scrollToAbout} // Function to scroll down
                     className="cursor-pointer"
                 >
-                    <FiChevronDown size={40} className="bg-black text-white dark:bg-white dark:text-black font-bold p-1 rounded-full" />
+                    <FiChevronDown size={50} className=" text-black  dark:text-white" />
                 </motion.div>
             </div>
         </section>

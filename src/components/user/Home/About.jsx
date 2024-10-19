@@ -1,7 +1,13 @@
 import { motion } from 'framer-motion';
 import aboutImg from '../../../assets/images/about.png';
+import { useEffect } from 'react';
 
 export default function About() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
