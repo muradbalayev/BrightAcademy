@@ -7,7 +7,10 @@ import ScrollSection from "../../components/user/Home/ScrollSection";
 import Instructors from "../../components/user/Home/Instructors";
 // import Carousel from "../../components/user/Home/Carousel";
 import Graduates from "../../components/user/Home/Graduates";
+// import MovingCards from "../../components/user/Home/MovingCards";
 import { useEffect } from "react";
+import MovingCardsRight from "@/components/user/Home/MovingCards/MovingCardsRight";
+import MovingCardsLeft from "@/components/user/Home/MovingCards/MovingCardsLeft";
 
 
 
@@ -24,6 +27,8 @@ const HomePage = () => {
     {/* <Carousel/> */}
     <Instructors/>
     <ScrollSection/>
+    <MovingCardsRight/>
+    <MovingCardsLeft/>
     <Graduates/>
     </>
   )

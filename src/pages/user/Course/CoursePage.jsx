@@ -1,90 +1,93 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
-import courseImg from '../../../assets/images/course.jpg';
+import english from '../../../assets/images/english.svg';
+import german from '../../../assets/images/german2.png';
+import french from '../../../assets/images/france.webp';
+import russian from '../../../assets/images/russian.png';
 
 const courses = [
-    {
-      id: 1,
-      title: 'İngilis Dili',
-      description: 'IELTS və TOEFL imtahanlarına hazırlıq üçün oxuma, yazma, dinləmə və danışıq dərsləri. Testlər və şəxsi rəy ilə əhatələnmişdir.',
-      image: courseImg,
-      duration: '6 ay',
-      level: 'Orta səviyyədən Yüksək səviyyəyə',
-      instructor: 'John Doe',
-      price: "150",
-      schedule: 'B.e və Çərşənbə, 18:00-20:00',
-      startDate: '2024-12-01',
-      syllabus: [
-        'IELTS və TOEFL Giriş',
-        'Oxuma Anlama Strategiyaları',
-        'Akademik Yazı Bacarıqları',
-        'Dinləmə Texnikaları',
-        'Danışıq Təcrübəsi və Qiymətləndirmə',
-        'Sınaq İmtahanları və Rəy Seansları'
-      ]
-    },
-    {
-      id: 2,
-      title: 'Riyaziyyat',
-      description: 'Orta məktəb və universitet səviyyəsi üzrə riyaziyyat, cəbr, hesablama və statistika mövzularını əhatə edir. Rəqabətli imtahanlara hazırlıq və problem həll etmə bacarıqlarını artırmaq üçün ideal.',
-      image: courseImg,
-      duration: '4 ay',
-      level: 'Bütün Səviyyələr',
-      instructor: 'Jane Smith',
-      price: "150",
-      schedule: 'Çərşənbə axşamı və Cümə axşamı, 17:00-19:00',
-      startDate: '2024-12-01',
-      syllabus: [
-        'Cəbr və Funksiyalar',
-        'Həndəsə və Trigonometriya',
-        'Hesablama: Diferensial və İntegrasiya',
-        'Xətti Cəbr',
-        'Ehtimal və Statistika',
-        'Problem Həll Etmə Texnikaları'
-      ]
-    },
-    {
-      id: 3,
-      title: 'Proqramlaşdırma',
-      description: 'Veb və mobil tətbiqetmə inkişafı üçün HTML, CSS, JavaScript və React üzərində praktiki layihələrlə dolu dərslər.',
-      image: courseImg,
-      duration: '8 ay',
-      level: 'Başlanğıcdan Yüksək səviyyəyə',
-      instructor: 'Michael Johnson',
-      price: "150",
-      schedule: 'Şənbə, 10:00-13:00',
-      startDate: '2024-12-01',
-      syllabus: [
-        'HTML və CSS Əsasları',
-        'JavaScriptin Əsas və İrəli Mövzuları',
-        'React.js Framework',
-        'Backend Proqramlaşdırma Node.js ilə',
-        'MongoDB ilə Verilənlər Bazası İdarəetməsi',
-        'Tam Stak Layihə İnkişafı'
-      ]
-    },
-    {
-      id: 4,
-      title: 'Biznes İdarəçiliyi',
-      description: 'Marketinq, maliyyə və əməliyyat idarəçiliyi üzrə təməl biliklər. Sahibkarlar və peşəkar bacarıqlarını artırmaq istəyənlər üçün nəzərdə tutulub.',
-      image: courseImg,
-      duration: '5 ay',
-      level: 'Başlanğıcdan Orta səviyyəyə',
-      instructor: 'Sarah Williams',
-      price: "150",
-      schedule: 'Cümə, 18:00-21:00',
-      startDate: '2024-12-01',
-      syllabus: [
-        'İdarəetmənin Prinsipləri',
-        'Marketinq Strategiyaları',
-        'Maliyyə İdarəçiliyi',
-        'Əməliyyatların İdarə Edilməsi',
-        'İnsan Resurslarının İdarə Edilməsi',
-        'Biznes Etikası və Liderlik'
-      ]
-    },
-  ];
+  {
+    id: 1,
+    title: 'İngilis Dili',
+    description: 'İngilis dilinin qrammatikasını, lüğətini və danışıq bacarıqlarını inkişaf etdirmək üçün dərslər.',
+    image: english,
+    duration: '6 ay',
+    level: 'Başlanğıcdan İrəliləyə',
+    instructor: 'Səbinə Hümbətova',
+    price: "150",
+    schedule: 'B.e və Çərşənbə, 18:00-20:00',
+    startDate: '2024-12-01',
+    syllabus: [
+      'İngilis dilinin əsasları',
+      'Qrammatika və lüğət',
+      'Danışma praktikası',
+      'Dinləmə və anlama',
+      'Yazı bacarıqları',
+      'İmtahan hazırlığı'
+    ]
+  },
+  {
+    id: 2,
+    title: 'Rus Dili',
+    description: 'Rus dilinin əsaslarını öyrənmək üçün dərslər, qrammatika və söz ehtiyatı üzərində fokuslanma.',
+    image: russian,
+    duration: '5 ay',
+    level: 'Başlanğıc',
+    instructor: 'Elvira Ocaxquliyeva',
+    price: "150",
+    schedule: 'Cümə, 17:00-19:00',
+    startDate: '2024-12-01',
+    syllabus: [
+      'Rus dilinin qrammatikasının əsasları',
+      'Sözlər və ifadələr',
+      'Dinləmə və anlama',
+      'Danışma praktikası',
+      'Yazı bacarıqları',
+      'Mədəniyyət və adətlər'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Alman Dili',
+    description: 'Alman dilində sərbəst danışmaq və yazmaq üçün dərslər, qrammatika və praktiki tətbiqlər.',
+    image: german,
+    duration: '6 ay',
+    level: 'Başlanğıcdan Orta səviyyəyə',
+    instructor: 'Səbinə Məhərrəmova',
+    price: "150",
+    schedule: 'Şənbə, 10:00-12:00',
+    startDate: '2024-12-01',
+    syllabus: [
+      'Alman dilinin əsasları',
+      'Qrammatika',
+      'Danışma və dinləmə bacarıqları',
+      'Yazı praktikası',
+      'İmtahan hazırlığı',
+      'Mədəniyyət və adətlər'
+    ]
+  },
+  {
+    id: 4,
+    title: 'Fransız Dili',
+    description: 'Fransız dilini öyrənmək üçün dinləmə, danışma və yazma bacarıqları üzrə dərslər.',
+    image: french,
+    duration: '5 ay',
+    level: 'Başlanğıc',
+    instructor: 'Fidan Əliyeva',
+    price: "150",
+    schedule: 'Çərşənbə axşamı, 18:00-20:00',
+    startDate: '2024-12-01',
+    syllabus: [
+      'Fransız dilinin qrammatikasının əsasları',
+      'Sözlər və ifadələr',
+      'Dinləmə bacarıqları',
+      'Danışma praktikası',
+      'Yazı bacarıqları',
+      'Mədəniyyət və adətlər'
+    ]
+  },
+];
 
 export default function CoursePage() {
   const { courseId } = useParams();
@@ -115,7 +118,7 @@ export default function CoursePage() {
           transition={{ delay: 0.2, duration: 0.5 }}
           src={course.image}
           alt={course.title}
-          className="w-full h-64 object-cover"
+          className="w-full h-64 object-fit"
         />
         <div className="p-8">
           <motion.h1 

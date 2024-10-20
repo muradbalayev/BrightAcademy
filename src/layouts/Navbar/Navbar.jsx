@@ -4,11 +4,17 @@ import { FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { BiSun } from "react-icons/bi";
 import { motion } from 'framer-motion';
+import { Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
+import english from '../../assets/images/english.svg'
+import german from '../../assets/images/german2.png'
+import russian from '../../assets/images/russian.png'
+import france from '../../assets/images/france.webp'
 
 export default function Navbar() {
   const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [active, setActive] = useState(null);
   const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -74,6 +80,36 @@ export default function Navbar() {
             <li>
               <Link to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Haqqımızda</Link>
             </li>
+            <Menu setActive={setActive}>
+            <MenuItem setActive={setActive} active={active} item="Kurslar">
+            <div className="text-sm grid grid-cols-2 gap-3 lg:p-4 p-1">
+            <ProductItem
+              title="Ingilis Dili"
+              href="/courses/1"
+              src={english}
+              description="IELTS və TOEFL imtahanlarına hazırlıq üçün oxuma, yazma, dinləmə və danışıq dərsləri."
+            />
+            <ProductItem
+              title="Alman Dili"
+              href="/courses/3"
+              src={german}
+              description="Alman dilinin qrammatikasını öyrənərək dilin strukturunu düzgün mənimsəyin."
+            />
+            <ProductItem
+              title="Rus Dili"
+              href="/courses/2"
+              src={russian}
+              description=" Bu kursla rus dilini asanlıqla öyrənə bilərsiniz."
+            />
+            <ProductItem
+              title="Fransız Dili"
+              href="/courses/4"
+              src={france}
+              description="Bu kursla fransız dilini asanlıqla öyrənə bilərsiniz."
+            />
+          </div>
+            </MenuItem>
+            </Menu>
             <li>
               <Link to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Əlaqə</Link>
             </li>
@@ -93,16 +129,16 @@ export default function Navbar() {
           >
             <ul className="flex flex-col p-4 mt-4 font-medium rounded-lg bg-gray-100 dark:bg-gray-800 ">
               <li>
-                <Link onClick={toggleMenu} to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Home</Link>
+                <Link onClick={toggleMenu} to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Ana Səhifə</Link>
               </li>
               <li>
-                <Link onClick={toggleMenu} to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">About</Link>
+                <Link onClick={toggleMenu} to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Haqqımızda</Link>
               </li>
               <li>
-                <Link onClick={toggleMenu} to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Contact</Link>
+                <Link onClick={toggleMenu} to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Əlaqə</Link>
               </li>
               <li>
-                <Link onClick={toggleMenu} to="/blogs" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Blogs</Link>
+                <Link onClick={toggleMenu} to="/blogs" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 dark:hover:bg-gray-700">Bloq</Link>
               </li>
             </ul>
           </motion.div>

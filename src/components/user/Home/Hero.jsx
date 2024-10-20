@@ -91,14 +91,14 @@ export default function HeroSection() {
                         >
                             Bright Academy tədris mərkəzinə xoş gəlmisiniz!
                         </motion.h1>
-                        <motion.p
+                        <motion.div
                             className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-8 min-h-[115px]"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                         >
                             BrightAcademy ilə uğura bir addım daha yaxınsınız – Bizimlə öyrən, daha <FlipWords words={words} />ol, və <FlipWords words={futureWords} />işıqlandır!
-                        </motion.p>
+                        </motion.div>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -139,7 +139,7 @@ export default function HeroSection() {
                                 </CardItem>
                             </CardContainer>
                             <motion.div
-                                className="absolute -bottom-6 -right-3 bg-yellow-400 dark:bg-yellow-600 rounded-full sm:p-4 p-2 shadow-lg"
+                                className="absolute -bottom-10 -right-3 bg-yellow-400 dark:bg-yellow-600 rounded-full sm:p-4 p-2 shadow-lg"
                                 {...shakeAnimation} // Apply the shaking animation
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="sm:h-8 sm:w-8 w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

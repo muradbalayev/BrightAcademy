@@ -197,7 +197,7 @@ export default function BlogsPage() {
                                         </Avatar>
                                         <span className="text-sm font-medium dark:text-white text-black">{post.author.name}</span>
                                     </div>
-                                    <Link to={`/blogs/${post.id}`} passHref>
+                                    <Link to={`/blogs/${post.id}`} passhref={post.id.toString()}>
                                         <Button >Daha Çox Oxuyun</Button>
                                     </Link>
                                 </CardFooter>
@@ -260,7 +260,7 @@ export default function BlogsPage() {
                                             <span className="text-sm font-medium dark:text-white text-black">{post.author.name}</span>
                                         </div>
                                     </CardItem>
-                                    <Link to={`/blogs/${post.id}`} passHref>
+                                    <Link to={`/blogs/${post.id}`} passhref={post.id.toString()}>
                                     <CardItem
                                         translateZ={20}
                                         as="button"
