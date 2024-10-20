@@ -128,7 +128,7 @@ export default function HeroSection() {
                             /> */}
                             <CardContainer>
 
-                                <CardItem translateZ="70" className="w-full mt-4">
+                                <CardItem translateZ="30" className="w-full mt-4">
                                     <img
                                         src={heroİmg}
                                         // height="6000"
