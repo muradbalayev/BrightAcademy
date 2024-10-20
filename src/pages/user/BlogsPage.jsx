@@ -191,7 +191,7 @@ export default function BlogsPage() {
                                 </CardContent>
                                 <CardFooter className="flex justify-between items-center">
                                     <div className="flex items-center space-x-2">
-                                        <Avatar >
+                                        <Avatar>
                                             <AvatarImage src={post.author.avatar} alt={post.author.name} />
                                             <AvatarFallback>{post.author.name.charAt(0)}</AvatarFallback>
                                         </Avatar>
@@ -205,10 +205,10 @@ export default function BlogsPage() {
                         </motion.div>
                     ))}
                 </div>
-                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 py-20">
                     {blogPosts.map((post) => (
-                        <CardContainer key={post.id} className="inter-var">
-                            <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
+                        <CardContainer key={post.id} className="inter-var w-full">
+                            <CardBody className="bg-gray-50  relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full min-h-[550px] rounded-xl p-6 border  ">
                                 <CardItem
                                     translateZ="50"
                                     className="text-xl font-bold text-neutral-600 dark:text-white"

@@ -1,4 +1,4 @@
-import { delay, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import heroBg from '../../../assets/images/bgimage.png';
 import heroİmg from '../../../assets/images/usermap.png';
 import { ThemeContext } from '@/context/ThemeContext';
