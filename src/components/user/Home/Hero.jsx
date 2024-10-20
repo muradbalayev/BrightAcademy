@@ -92,7 +92,7 @@ export default function HeroSection() {
                             Bright Academy tədris mərkəzinə xoş gəlmisiniz!
                         </motion.h1>
                         <motion.p
-                            className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-8"
+                            className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-8 min-h-[115px]"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
