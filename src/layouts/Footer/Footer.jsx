@@ -147,7 +147,13 @@ const Footer = () => {
           <motion.p className="text-center text-gray-600 dark:text-gray-400 text-sm mt-4 lg:mt-0" variants={itemVariants}>
             &copy; 2024 BrightAcademy. Bütün hüquqlar qorunur.
           </motion.p>
+
+          {/* Site by Murad Balazada */}
+          <motion.a href='https://muradbalazada.vercel.app' target='_blank' className="text-center text-gray-600 dark:text-gray-400 text-sm mt-2 lg:mt-0" variants={itemVariants}>
+            Site by Murad Balazada
+          </motion.a>
         </motion.div>
+
       </div>
     </motion.footer>
   );
