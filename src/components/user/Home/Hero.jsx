@@ -1,10 +1,12 @@
-import { motion } from 'framer-motion';
+import { delay, motion } from 'framer-motion';
 import heroBg from '../../../assets/images/bgimage.png';
 import heroİmg from '../../../assets/images/usermap.png';
 import { ThemeContext } from '@/context/ThemeContext';
 import { useContext } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 import { Button } from '@/components/ui/button';
+import { FlipWords } from '@/components/ui/flip-words';
+import { CardContainer, CardItem } from '@/components/ui/3d-card';
 
 export default function HeroSection() {
     const { isDarkTheme } = useContext(ThemeContext);
@@ -21,6 +23,23 @@ export default function HeroSection() {
         const courseSection = document.getElementById('courses'); // Make sure this ID matches the About section
         if (courseSection) {
             courseSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const words = ["yaxşı", "bilikli", "peşəkar"];
+    const futureWords = ["gələcəyini", "həyatını"];
+
+    const shakeAnimation = {
+        initial: { x: 0 },
+        animate: {
+            x: [0, -5, 5, -5, 5, 0], // Define the shake pattern
+            transition: {
+                delay: 0.8, 
+                duration: 0.5, // Duration of one shake
+                repeat: Infinity, // Repeat infinitely
+                repeatDelay: 3, // Delay between shakes
+                ease: "easeInOut" // Easing for smoothness
+            }
         }
     };
 
@@ -73,12 +92,12 @@ export default function HeroSection() {
                             Bright Academy tədris mərkəzinə xoş gəlmisiniz!
                         </motion.h1>
                         <motion.p
-                            className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8"
+                            className="text-xl md:text-2xl font-medium text-gray-600 dark:text-gray-300 mb-8"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                         >
-                            Bir tədris mərkəzi kimi tələbələrimizin uğurunu öz uğurumuz olaraq dəyərləndiririk.
+                            BrightAcademy ilə uğura bir addım daha yaxınsınız – Bizimlə öyrən, daha <FlipWords words={words} />ol, və <FlipWords words={futureWords} />işıqlandır!
                         </motion.p>
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -100,18 +119,33 @@ export default function HeroSection() {
                             transition={{ duration: 0.8 }}
                             className="relative mx-auto flex justify-center"
                         >
-                            <img
+                            {/* <img
                                 src={heroİmg}
                                 alt="Bright Academy Students"
                                 width={600}
                                 height={600}
                                 className="rounded-lg"
-                            />
-                            <div className="absolute -bottom-6 -right-3 bg-yellow-400 dark:bg-yellow-600 rounded-full sm:p-4 p-2 shadow-lg">
+                            /> */}
+                            <CardContainer>
+
+                                <CardItem translateZ="70" className="w-full mt-4">
+                                    <img
+                                        src={heroİmg}
+                                        // height="6000"
+                                        // width="6000"
+                                        className="w-full object-cover  "
+                                        alt="thumbnail"
+                                    />
+                                </CardItem>
+                            </CardContainer>
+                            <motion.div
+                                className="absolute -bottom-6 -right-3 bg-yellow-400 dark:bg-yellow-600 rounded-full sm:p-4 p-2 shadow-lg"
+                                {...shakeAnimation} // Apply the shaking animation
+                            >
                                 <svg xmlns="http://www.w3.org/2000/svg" className="sm:h-8 sm:w-8 w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                                 </svg>
-                            </div>
+                            </motion.div>
                         </motion.div>
                     </div>
                 </div>

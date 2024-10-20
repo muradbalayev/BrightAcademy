@@ -16,13 +16,13 @@ const ContactPage = () => {
         transition={{ duration: 0.5 }}
         className="container mx-auto px-4 py-16"
       >
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Contact Us</h1>
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">Bizimlə Əlaqə Saxla</h1>
         
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <form className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Ad Soyad</label>
                 <input type="text" id="name" name="name" className="mt-1 border py-2 px-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-800 dark:text-white" />
               </div>
               <div>
@@ -30,12 +30,12 @@ const ContactPage = () => {
                 <input type="email" id="email" name="email" className="mt-1 border py-2 px-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-800 dark:text-white" />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Mesaj</label>
                 <textarea id="message" name="message" rows={4} className="mt-1 border py-2 px-3 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 dark:bg-gray-800 dark:text-white"></textarea>
               </div>
               <div>
                 <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                  Send Message
+                  Göndər
                 </button>
               </div>
             </form>
@@ -43,7 +43,7 @@ const ContactPage = () => {
           
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Contact Information</h2>
+              <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Əlaqə Məlumatları</h2>
               <div className="space-y-4">
                 <p className="flex items-center text-gray-600 dark:text-gray-300">
                   <FaPhone className="mr-2" /> +1 (555) 123-4567

@@ -75,12 +75,12 @@ const AboutPage = () => {
             {/* What We Do Section */}
             <section className="py-20">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">What We Do</h2>
+                    <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">Nə Edirik?</h2>
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
-                            { icon: FaGraduationCap, title: "Quality Education", description: "We provide top-notch courses taught by industry experts." },
-                            { icon: FaBriefcase, title: "Career Support", description: "Our career services help students land their dream jobs." },
-                            { icon: FaUsers, title: "Community", description: "Join a vibrant community of learners and professionals." }
+                            { icon: FaGraduationCap, title: "Yüksək Keyfiyyətli Təhsil", description: "Sənaye ekspertləri tərəfindən tədris olunan yüksək səviyyəli kurslar təqdim edirik." },
+                            { icon: FaBriefcase, title: "Karyera Dəstəyi", description: "Karyera xidmətlərimiz tələbələrin arzuladıqları işlərə sahib olmasına kömək edir." },
+                            { icon: FaUsers, title: "İcma", description: "Öyrənənlər və peşəkarların canlı bir icmasına qoşulun." }
                         ].map((item, index) => (
                             <motion.div
                                 key={index}
@@ -101,13 +101,13 @@ const AboutPage = () => {
             {/* Statistics Section */}
             <section className="bg-indigo-600 dark:bg-indigo-800 py-20">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-12 text-white">Our Impact</h2>
+                    <h2 className="text-3xl font-bold text-center mb-12 text-white">Nəticələrimiz</h2>
                     <div className="grid md:grid-cols-4 gap-8">
                         {[
-                            { icon: FaGraduationCap, value: "5000+", label: "Graduates" },
-                            { icon: FaBriefcase, value: "90%", label: "Job Placement" },
-                            { icon: FaUsers, value: "100+", label: "Expert Instructors" },
-                            { icon: FaAward, value: "50+", label: "Industry Awards" }
+                            { icon: FaGraduationCap, value: "5000+", label: "Məzunlar" },
+                            { icon: FaBriefcase, value: "90%", label: "İşə Yerləşmə" },
+                            { icon: FaUsers, value: "50+", label: "Ekspert Təlimçilər" },
+                            { icon: FaAward, value: "50+", label: "Sənaye Mükafatları" }
                         ].map((item, index) => (
                             <motion.div
                                 key={index}

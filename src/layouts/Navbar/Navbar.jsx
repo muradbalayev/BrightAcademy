@@ -69,16 +69,16 @@ export default function Navbar() {
         <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? '' : 'hidden md:flex'}`}>
           <ul className="md:flex hidden p-4 md:p-0 mt-4 font-medium rounded-lg flex-row md:space-x-8 md:mt-0 md:border-0 dark:md:bg-transparent dark:bg-gray-900 md:bg-transparent bg-white">
             <li>
-              <Link to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</Link>
+              <Link to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Ana Səhifə</Link>
             </li>
             <li>
-              <Link to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</Link>
+              <Link to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Haqqımızda</Link>
             </li>
             <li>
-              <Link to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
+              <Link to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Əlaqə</Link>
             </li>
             <li>
-              <Link to="/blogs" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blogs</Link>
+              <Link to="/blogs" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Bloq</Link>
             </li>
           </ul>
         </div>
