@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { FaMoon, FaBars, FaTimes } from "react-icons/fa";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { BiSun } from "react-icons/bi";
 import { motion } from 'framer-motion';
 import {  Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
@@ -48,7 +48,7 @@ export default function Navbar() {
   return (
     <>
     <nav className={`fixed w-full z-20 top-0 left-0 ${isScrolled || !isHomePage ? 'bg-white dark:bg-gray-900 shadow-md' : 'bg-transparent'} dark:text-white text-gray-800`}>
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link to="/" className="flex items-center">
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-black dark:text-white">BrightAcademy</span>
         </Link>
@@ -73,17 +73,17 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <div className={`items-center py-2 justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? '' : 'hidden md:flex'}`}>
-          <ul className="md:flex hidden p-4 md:p-0 mt-4 font-medium rounded-lg flex-row md:space-x-8 md:mt-0 md:border-0 dark:md:bg-transparent dark:bg-gray-900 md:bg-transparent bg-white">
+        <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? '' : 'hidden md:flex'}`}>
+          <ul className="nav-list md:flex hidden p-4 md:p-0 mt-4 font-medium rounded-lg flex-row md:space-x-8 md:mt-0 md:border-0 dark:md:bg-transparent dark:bg-gray-900 md:bg-transparent bg-white">
             <li>
-              <NavLink to="/" exact className="nav-link text-black dark:text-white" activeClassName="active">
+              <Link to="/" exact className="nav-link text-black dark:text-white" >
                 Ana Səhifə
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink to="/about" className="nav-link text-black dark:text-white" activeClassName="active">
+              <Link to="/about" className="nav-link text-black dark:text-white" >
                 Haqqımızda
-              </NavLink>
+              </Link>
             </li>
             <Menu setActive={setActive} >
             <MenuItem setActive={setActive} active={active} item="Kurslar">
@@ -114,21 +114,20 @@ export default function Navbar() {
                   />
                 </div>
               </MenuItem>
-              <NavLink to={'/contact'} className="nav-link text-black dark:text-white" activeClassName="active">
+              <Link to={'/contact'} className=" text-black dark:text-white" >
                 <MenuItem setActive={setActive} active={active} item="Əlaqə">
                   <div className="flex flex-col space-y-4 text-sm">
                     <p >Bizimlə Əlaqə Saxla</p>
                   </div>
                 </MenuItem>
-              </NavLink>
-              <NavLink to={'/blogs'} className="nav-link text-black dark:text-white" activeClassName="active">
+              </Link>
+              <Link to={'/blogs'} className=" text-black dark:text-white" >
                 <MenuItem setActive={setActive} active={active} item="Bloq">
                   <div className="flex flex-col space-y-4 text-sm">
                     <p >Ən son yeniliklərdən xəbərdar olun!</p>
                   </div>
                 </MenuItem>
-              </NavLink>
-             
+              </Link>             
             </Menu>
             {/* <li>
               <NavLink to="/contact" className="nav-link text-black dark:text-white" activeClassName="active">

@@ -9,9 +9,15 @@
 
 .nav-link {
   position: relative;
-  /* padding: 0.5rem; */
+  /* padding-top: 0.5rem; */
+  /* padding-bottom: 0.5rem; */
   text-decoration: none;
   transition: color 0.3s ease;
+}
+
+.nav-list li {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .nav-link::before {

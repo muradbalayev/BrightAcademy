@@ -18,10 +18,10 @@ export const MenuItem = ({
   children
 }) => {
   return (
-    (<div onMouseEnter={() => setActive(item)} className="relative ">
+    (<div onMouseEnter={() => setActive(item)} className="relative py-4">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:opacity-[0.9] dark:text-white">
+        className="cursor-pointer nav-link text-black hover:opacity-[0.9] dark:text-white">
         {item}
       </motion.p>
       {active !== null && (
@@ -31,7 +31,7 @@ export const MenuItem = ({
           transition={transition}>
           {active === item && (
             <div
-              className="absolute top-[calc(100%_+_0rem)] left-1/2 transform lg:-translate-x-1/2 -translate-x-2/3 pt-4">
+              className="absolute top-[calc(100%_+_1rem)] left-1/2 transform lg:-translate-x-1/2 -translate-x-2/3 pt-4">
               <motion.div
                 transition={transition}
                 // layoutId ensures smooth animation
