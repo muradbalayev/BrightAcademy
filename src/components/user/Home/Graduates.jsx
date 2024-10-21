@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import Avatar from '@mui/material/Avatar';
 import student2 from '../../../assets/images/student2.jpg'
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 
 // Sample graduates data
 const graduates = [
@@ -157,7 +157,7 @@ export default function Graduates() {
             </motion.div>
           ))}
         </motion.div>
-      <Button className="mx-auto mt-10">Daha çox...</Button>
+      {/* <Button className="mx-auto mt-10">Daha çox...</Button> */}
       </div>
     </section>
   );

@@ -46,6 +46,7 @@ export default function Navbar() {
   };
 
   return (
+    <>
     <nav className={`fixed w-full z-20 top-0 left-0 ${isScrolled || !isHomePage ? 'bg-white dark:bg-gray-900 shadow-md' : 'bg-transparent'} dark:text-white text-gray-800`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center">
@@ -168,5 +169,8 @@ export default function Navbar() {
         )}
       </div>
     </nav>
+        <div className={`fixed ${active ? "opacity-100" : "opacity-0"} transition-all duration-300 inset-0 z-10 bg-gray-900 bg-opacity-50 pointer-events-none`}></div>
+    </>
+
   );
 }
