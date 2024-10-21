@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 import { FaMoon, FaBars, FaTimes } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { BiSun } from "react-icons/bi";
 import { motion } from 'framer-motion';
-import { Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
+import {  Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import english from '../../assets/images/english.svg'
 import german from '../../assets/images/german2.png'
 import russian from '../../assets/images/russian.png'
@@ -72,50 +72,73 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <div className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? '' : 'hidden md:flex'}`}>
+        <div className={`items-center py-2 justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? '' : 'hidden md:flex'}`}>
           <ul className="md:flex hidden p-4 md:p-0 mt-4 font-medium rounded-lg flex-row md:space-x-8 md:mt-0 md:border-0 dark:md:bg-transparent dark:bg-gray-900 md:bg-transparent bg-white">
             <li>
-              <Link to="/" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Ana Səhifə</Link>
+              <NavLink to="/" exact className="nav-link text-black dark:text-white" activeClassName="active">
+                Ana Səhifə
+              </NavLink>
             </li>
             <li>
-              <Link to="/about" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Haqqımızda</Link>
+              <NavLink to="/about" className="nav-link text-black dark:text-white" activeClassName="active">
+                Haqqımızda
+              </NavLink>
             </li>
-            <Menu setActive={setActive}>
+            <Menu setActive={setActive} >
             <MenuItem setActive={setActive} active={active} item="Kurslar">
-            <div className="text-sm grid grid-cols-2 gap-3 lg:p-4 p-1">
-            <ProductItem
-              title="Ingilis Dili"
-              href="/courses/1"
-              src={english}
-              description="IELTS və TOEFL imtahanlarına hazırlıq üçün oxuma, yazma, dinləmə və danışıq dərsləri."
-            />
-            <ProductItem
-              title="Alman Dili"
-              href="/courses/3"
-              src={german}
-              description="Alman dilinin qrammatikasını öyrənərək dilin strukturunu düzgün mənimsəyin."
-            />
-            <ProductItem
-              title="Rus Dili"
-              href="/courses/2"
-              src={russian}
-              description=" Bu kursla rus dilini asanlıqla öyrənə bilərsiniz."
-            />
-            <ProductItem
-              title="Fransız Dili"
-              href="/courses/4"
-              src={france}
-              description="Bu kursla fransız dilini asanlıqla öyrənə bilərsiniz."
-            />
-          </div>
-            </MenuItem>
+                <div className="text-sm grid grid-cols-2 gap-3 lg:p-4 p-1">
+                  <ProductItem
+                    title="Ingilis Dili"
+                    href="/courses/1"
+                    src={english}
+                    description="IELTS və TOEFL imtahanlarına hazırlıq üçün oxuma, yazma, dinləmə və danışıq dərsləri."
+                  />
+                  <ProductItem
+                    title="Alman Dili"
+                    href="/courses/3"
+                    src={german}
+                    description="Alman dilinin qrammatikasını öyrənərək dilin strukturunu düzgün mənimsəyin."
+                  />
+                  <ProductItem
+                    title="Rus Dili"
+                    href="/courses/2"
+                    src={russian}
+                    description=" Bu kursla rus dilini asanlıqla öyrənə bilərsiniz."
+                  />
+                  <ProductItem
+                    title="Fransız Dili"
+                    href="/courses/4"
+                    src={france}
+                    description="Bu kursla fransız dilini asanlıqla öyrənə bilərsiniz."
+                  />
+                </div>
+              </MenuItem>
+              <NavLink to={'/contact'} className="nav-link text-black dark:text-white" activeClassName="active">
+                <MenuItem setActive={setActive} active={active} item="Əlaqə">
+                  <div className="flex flex-col space-y-4 text-sm">
+                    <p >Bizimlə Əlaqə Saxla</p>
+                  </div>
+                </MenuItem>
+              </NavLink>
+              <NavLink to={'/blogs'} className="nav-link text-black dark:text-white" activeClassName="active">
+                <MenuItem setActive={setActive} active={active} item="Bloq">
+                  <div className="flex flex-col space-y-4 text-sm">
+                    <p >Ən son yeniliklərdən xəbərdar olun!</p>
+                  </div>
+                </MenuItem>
+              </NavLink>
+             
             </Menu>
-            <li>
-              <Link to="/contact" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Əlaqə</Link>
-            </li>
-            <li>
-              <Link to="/blogs" className="block py-2 pl-3 pr-4 text-black dark:text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Bloq</Link>
-            </li>
+            {/* <li>
+              <NavLink to="/contact" className="nav-link text-black dark:text-white" activeClassName="active">
+                Əlaqə
+              </NavLink>
+            </li> */}
+            {/* <li>
+              <NavLink to="/blogs" className="nav-link text-black dark:text-white" activeClassName="active">
+                Bloq
+              </NavLink>
+            </li> */}
           </ul>
         </div>
 

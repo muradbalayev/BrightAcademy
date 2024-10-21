@@ -61,7 +61,7 @@ export const Menu = ({
     (<nav
       // resets the state
       onMouseLeave={() => setActive(null)}
-      className="relative">
+      className="relative flex space-x-8">
       {children}
     </nav>)
   );
